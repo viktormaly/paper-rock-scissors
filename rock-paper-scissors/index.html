@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    humanScore = 0;
+    computerScore = 0;
+
+    function getComputerChoice(){
+      let pc = Math.random();
+      let result = ''
+
+      if(pc > 0 && pc < 0.33){
+       result = 'rock'
+      } else if(pc > 0.33 && pc < 0.66){
+       result = 'paper'
+      } else if(pc > 0.66 && pc < 1){
+       result = 'scissors'
+      }
+      return result;
+    }
+
+
+      function getHumanChoice(){
+      let user = window.prompt("Write your choice here");
+      return user
+      }
+
+
+      function playRound(humanChoice, computerChoice){
+
+        console.log("user choice is " + humanChoice + " and PC choice is " + computerChoice);
+
+        if(humanChoice === 'rock'){
+          if(computerChoice === 'rock'){
+            return('tie tie suka. ' + "Human score is " + humanScore)
+          } else if( computerChoice === 'scissors'){
+            humanScore++
+            return('viktory nahui ' + "Human score is " + humanScore);
+          } else if( computerChoice === 'paper'){
+            computerScore++
+            return('loooooooooose ' + "PC score is " + computerScore);
+          }
+        } else if(humanChoice === 'paper'){
+          if(computerChoice === 'paper'){
+            return('tie');
+          } else if(computerChoice === 'rock'){
+            humanScore++
+            return('viktory nahui ' + "Human score is " + humanScore);
+          } else if(computerChoice === 'scissors'){
+            computerScore++
+            return('loooooooooose ' + "PC score is " + computerScore);
+          }
+        } else if(humanChoice === 'scissors'){
+          if( computerChoice === 'scissors'){
+            return 'tie thai suka lbyat';
+          } else if( computerChoice === 'rock'){
+            computerScore++
+            return('loooooooooose ' + "PC score is " + computerScore);
+          } else if( computerChoice === 'paper'){
+            humanScore++
+            return('vik vik hue ' + "Human score is " + humanScore)
+          }
+        }
+      }
+
+      const humanSelection = getHumanChoice();
+      const computerSelection = getComputerChoice();
+      console.log(playRound(humanSelection, computerSelection));
+
+      const humanSelection2 = getHumanChoice();
+      const computerSelection2 = getComputerChoice();
+      console.log(playRound(humanSelection, computerSelection));
+
+      const humanSelection3 = getHumanChoice();
+      const computerSelection3 = getComputerChoice();
+      console.log(playRound(humanSelection, computerSelection));
+
+      const humanSelection4 = getHumanChoice();
+      const computerSelection4 = getComputerChoice();
+      console.log(playRound(humanSelection, computerSelection));
+
+      const humanSelection5 = getHumanChoice();
+      const computerSelection5 = getComputerChoice();
+      console.log(playRound(humanSelection, computerSelection));
+  </script>
+</body>
+</html>
